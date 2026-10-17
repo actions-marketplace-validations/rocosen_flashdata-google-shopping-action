@@ -1,0 +1,44 @@
+{
+  "source": "google_shopping",
+  "name": "Google Shopping",
+  "sample": {
+    "query": "USB microphone",
+    "num": 5
+  },
+  "inputs": "query; optional Google search parameters",
+  "outputs": "results[].shopping: title, link, price and available merchant/rating fields; usage.credits",
+  "limits": "Prices are search snapshots; inventory and checkout price are not guaranteed.",
+  "outputExample": {
+    "source": "google_shopping",
+    "status": "done",
+    "results": [
+      {
+        "searchParameters": {
+          "q": "mechanical keyboard",
+          "gl": "us",
+          "hl": "en",
+          "type": "shopping",
+          "num": 40,
+          "page": 1,
+          "engine": "google"
+        },
+        "shopping": [
+          {
+            "title": "Keychron V1 Wired Custom Mechanical Keyboard barebone version 75% layout QMK/via programmable macro with Hot-swappable suppo",
+            "source": "Keychron.com",
+            "link": "https://www.google.com/search?ibp=oshop&q=mechanical+keyboard&prds=localAnnotatedOfferId:1,catalogid:4646494883927026855,pvo:2,pvt:hg,rds:PC_6027158597472037202%7CPROD_PC_6027158597472037202&gl=us&udm=28&pvorigin=2",
+            "price": "$69.99",
+            "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTmFH2V5iUcuY9yRuK1-vTVeyU3DJLVq_MomMlGTQnfiyxxBIB9ISDiXNuhtyWOBoDJNM1rCNvc07jUU4l1bilumAMkF8aHZ07__xTWQQw1dPRD8xAGCvk4",
+            "rating": 4.8,
+            "ratingCount": 336
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "credits": 0.02
+    }
+  },
+  "repository": "flashdata-google-shopping-action",
+  "action_name": "Google Shopping Offers - FlashData"
+}

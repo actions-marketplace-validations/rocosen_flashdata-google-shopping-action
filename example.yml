@@ -1,0 +1,23 @@
+name: Google Shopping Offers - FlashData
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Save a product-offer snapshot for a purchasing research pipeline,
+          preserving price labels and merchant fields.
+        id: data
+        uses: rocosen/flashdata-google-shopping-action@v0.1.0
+        with:
+          api-key: ${{ secrets.FLASHDATA_API_KEY }}
+          query: USB microphone
+          options-json: '{"num":5}'
+      - name: Save data for the next pipeline stage
+        uses: actions/upload-artifact@v4
+        with:
+          name: google-shopping
+          path: ${{ steps.data.outputs.artifact-directory }}
+          retention-days: 7
